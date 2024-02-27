@@ -225,7 +225,7 @@ plot_real <- function(object,
       }
     }
     map_data <- map_data[matcher, ]
-
+    map_obj <- merge(x = map_obj, y = map_data)
     # map_data <- map_data[, !colnames(map_data) %in% c(
     #   map_dom_id,
     #   names(map_tab)
@@ -246,9 +246,9 @@ plot_real <- function(object,
       }
     }
     map_data <- map_data[matcher, ]
-  }
 
-  map_obj <- merge(x = map_obj, y = map_data)
+    map_obj <- merge(x = map_obj, y = map_data, by.x = map_dom_id, by.y = "Domain")
+  }
 
   indicator <- colnames(map_data)
   indicator <- indicator[!(indicator %in% c("Domain", map_dom_id))]

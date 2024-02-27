@@ -23,9 +23,11 @@ Encoding: UTF-8
 Copyright: inst/COPYRIGHTS
 RoxygenNote: 7.2.3
 Imports:
+    dplyr,
     nlme,
     moments,
     ggplot2,
+    magrittr,
     MuMIn,
     gridExtra,
     openxlsx,
@@ -43,7 +45,9 @@ Imports:
     spdep,
     bestNormalize,
     survey,
-    sf
+    sf,
+    xgboost,
+    purrr
 Suggests:
     testthat,
     R.rsp,
