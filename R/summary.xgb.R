@@ -69,12 +69,34 @@ summary.xgb <- function(object, ...) {
     object$xgbModel$transformation,
     object$xgbModel$niter,
     object$xgbModel$params$max_depth,
+    object$xgbModel$params$colsample_bytree,
+    object$xgbModel$params$colsample_bylevel,
+    object$xgbModel$params$colsample_bynode,
+    object$xgbModel$params$subsample,
+    object$xgbModel$params$min_child_weight,
+    object$xgbModel$params$eta,
+    object$xgbModel$params$gamma,
+    object$xgbModel$params$max_delta_step,
+    object$xgbModel$params$lambda,
+    object$xgbModel$params$alpha,
     object$xgbModel$nfeatures)
   )
 
   colnames(xgb_info) <- NULL
   rownames(xgb_info) <- c(
-    "Transformation","Number of booting interations:", "Maximum depth of a tree:",
+    "Transformation",
+    "Number of booting interations:",
+    "Maximum depth of a tree:",
+    "Fraction of features used for each tree:",
+    "Fraction of features used for each level:",
+    "Fraction of features used for each node:",
+    "Fraction of samples used for fitting the individual base learners:",
+    "Minimum sum of instance weight:",
+    "Learning rate:",
+    "Minimum loss reduction:",
+    "Maximum step size:",
+    "L2 regularization:",
+    "L1 regularization:",
     "Number of independent variables:"
   )
 
